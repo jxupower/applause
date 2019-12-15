@@ -1,4 +1,35 @@
 {% extends "testerSearch/base.html" %}
 {% block content %}
-    <h1></h1>
+    <h1>Tester Search</h1>
+
+
+    <form method="GET" action=".">
+        <div class="form-row">
+            <div class="form-group col-md-4 col-lg-4">
+                <label for="countrySelected">Country Search</label>
+                <select id="countrySelected" class="form-control" name="category">
+                        <option selected>Choose...</option>
+                        {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                        {% endfor %}
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <form method="GET" action=".">
+        <div class="form-row">
+            <div class="form-group col-md-4 col-lg-4">
+                <label for="deviceSelected">Device Search</label>
+                <select id="deviceSelected" class="form-control" name="category">
+                        <option selected>Choose...</option>
+                        {% for device in devices %}
+                        <option value="{{ device }}">{{ device }}</option>
+                        {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
 {% endblock content %}
