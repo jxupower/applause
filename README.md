@@ -1,15 +1,15 @@
 # Applause Tester Match
 
-deployed app link: 
+deployed app link: \n
 applause-tester-match.herokuapp.com
 
 built using:
-  html-css styling front end
-  Django app back end
-  SQlite database
-  developed under virtual environment
+  html-css styling front end \n
+  Django app back end \n
+  SQlite database \n
+  developed under virtual environment \n
   
-view dependencies:
+view dependencies: \n
   open requirements.txt
   
  
