@@ -8,6 +8,7 @@ built using:
   Django app back end <br />
   SQlite database <br />
   developed under virtual environment <br />
+  deployed via heroku <br />
   
 view dependencies: <br />
   open requirements.txt
