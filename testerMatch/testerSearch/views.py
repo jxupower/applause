@@ -10,3 +10,7 @@ def home(request):
 def requirements(request):
     return render(request, 'testerSearch/requirements.html')
 
+
+
+
+
