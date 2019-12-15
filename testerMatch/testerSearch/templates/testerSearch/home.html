@@ -6,30 +6,43 @@
     <form method="GET" action=".">
         <div class="form-row">
             <div class="form-group col-md-4 col-lg-4">
-                <label for="countrySelected">Country Search</label>
-                <select id="countrySelected" class="form-control" name="category">
-                        <option selected>Choose...</option>
+                <label for="countries">Country</label>
+                <select id="countries" class="form-control" name="countries">
+                        <option selected>ALL</option>
                         {% for country in countries %}
                         <option value="{{ country }}">{{ country }}</option>
                         {% endfor %}
                 </select>
             </div>
         </div>
-    </form>
-
-    <form method="GET" action=".">
+        <button type="button" class="btn btn-primary" id="add-country">Add Another</button>
+    </br></br>
         <div class="form-row">
             <div class="form-group col-md-4 col-lg-4">
-                <label for="deviceSelected">Device Search</label>
-                <select id="deviceSelected" class="form-control" name="category">
-                        <option selected>Choose...</option>
+                <label for="devices">Device</label>
+                <select id="devices" class="form-control" name="devices">
+                        <option selected>ALL</option>
                         {% for device in devices %}
                         <option value="{{ device }}">{{ device }}</option>
                         {% endfor %}
                 </select>
             </div>
         </div>
+        <button type="button" class="btn btn-primary" id="add-device">Add Another</button>
+    </br></br>
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+    <hr />
+
+    <div class="row">
+        <ul>
+            {% for key,value in experience %}
+                <li>
+                    {{ key }} filed {{ value }} bugs on devices matching criteria
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock content %}
