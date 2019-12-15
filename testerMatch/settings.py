@@ -29,8 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://applause-tester-match.herokuapp.com/'
-
+    'applause-tester-match.herokuapp.com'
 ]
 
 
