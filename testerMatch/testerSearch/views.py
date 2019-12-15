@@ -7,15 +7,19 @@ from .models import Tester, Device, Bug
 
 def home(request):
     exp = filter(request)
+    country = request.GET.get('countries')
+    device = request.GET.get('devices')
     devices = Device.objects.all()
     countries = []
     for t in Tester.objects.all():
         if t.country not in countries:
             countries.append(t.country)
     context = {
-        'experience': exp.items(),
+        'experience': sorted(exp.items(),key=lambda x: x[1],reverse=True),
         'countries': countries,
         'devices': devices,
+        'deviceSelected': device,
+        'countrySelected': country
     }
     return render(request, 'testerSearch/home.html', context)
 
@@ -32,8 +36,7 @@ def filter(request):
     if country != "ALL":
         qs = qs.filter(country=country)
     if device != "ALL":
-        qs = qs.filter(device=Device.objects.get(deviceName=device))
-    #bugs = Bug.objects.select_related("tester__device").filter(tester)
+        qs = qs.filter(device__tester=Device.objects.get(deviceName=device).id)
     exp = {}
     for tester in qs:
         bugs = Bug.objects.all()

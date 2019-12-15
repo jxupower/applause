@@ -15,8 +15,6 @@
                 </select>
             </div>
         </div>
-        <button type="button" class="btn btn-primary" id="add-country">Add Another</button>
-    </br></br>
         <div class="form-row">
             <div class="form-group col-md-4 col-lg-4">
                 <label for="devices">Device</label>
@@ -28,13 +26,14 @@
                 </select>
             </div>
         </div>
-        <button type="button" class="btn btn-primary" id="add-device">Add Another</button>
-    </br></br>
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
     <hr />
 
+    <div class="row">
+        Matching Criteria: {{ countrySelected }} and {{ deviceSelected }}
+    </div>
     <div class="row">
         <ul>
             {% for key,value in experience %}
