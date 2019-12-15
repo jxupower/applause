@@ -35,11 +35,13 @@ def filter(request):
     qs = Tester.objects.all()
     if country != "ALL":
         qs = qs.filter(country=country)
-    if device != "ALL":
-        qs = qs.filter(device__tester=Device.objects.get(deviceName=device).id)
+    if device != "ALL" and device != None:
+        qs = qs.filter(device=Device.objects.get(deviceName=device))
     exp = {}
     for tester in qs:
         bugs = Bug.objects.all()
         bugs = bugs.filter(tester=tester.id)
+        if device != "ALL" and device != None:
+            bugs = bugs.filter(device=Device.objects.get(deviceName=device))
         exp[tester] = bugs.count()
     return exp
