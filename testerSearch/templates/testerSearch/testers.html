@@ -1,0 +1,14 @@
+{% extends "testerSearch/base.html" %}
+{% block content %}
+    {% for tester in testerList %}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ tester.country }}</a>
+                <small class="text-muted">Last Login:{{ tester.lastLogin }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ tester }}</a></h2>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -28,6 +28,13 @@ def requirements(request):
     return render(request, 'testerSearch/requirements.html')
 
 
+def testers(request):
+    context = {
+        'testerList': Tester.objects.all(),
+    }
+    return render(request, 'testerSearch/testers.html', context)
+
+
 
 def filter(request):
     country = request.GET.get('countries')
